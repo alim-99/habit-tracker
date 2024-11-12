@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const roboto = localFont({
   src: [
@@ -49,12 +50,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-      className={`${roboto.variable}`}
-      >
-        {children}
-      </body>
-    </html>
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body className={roboto.variable}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
   );
 }

@@ -15,16 +15,29 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
+  background-color: #F7F7F7;
+  color: black;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
+.dark body {
+  background-color: black;
+  color: white;
+}
+
+/* a {
   color: inherit;
   text-decoration: none;
+} */
+
+.dark a {
+  color: whitesmoke;
+}
+
+.dark a:hover {
+  color: rgb(183, 180, 180)
 }
 
 ul {
@@ -40,7 +53,6 @@ img {
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1rem 0;
   font-weight: 600;
-  color: #222;
 }
 
 p {
@@ -91,10 +103,22 @@ button:hover {
   margin-bottom: 1rem;
 } */
 
-input:focus, textarea:focus {
+.checkbox-animated {
+  transition: transform 0.2s ease;
+}
+
+.checkbox-animated:checked {
+  transform: scale(1.1);
+}
+
+.dark span {
+  color: whitesmoke;
+}
+
+/* input:focus, textarea:focus {
   border-color: #007bff;
   outline: none;
-}
+} */
 
 label {
   margin-bottom: 0.5rem;
@@ -131,8 +155,6 @@ label {
 }
 
 
-
-
 /* Cards */
 .card {
   background: #fff;
@@ -143,10 +165,24 @@ label {
   margin-bottom: 1.5rem;
 }
 
+.dark .card {
+  background-color: black;
+  /* border: 1px solid black; */
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+}
+
 .card-title {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: white;
+}
+
+.dark .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: white;
 }
 
 .card-body {
@@ -156,3 +192,5 @@ label {
   background: #f9f9f9;
   border-radius: 8px;
 }
+
+
